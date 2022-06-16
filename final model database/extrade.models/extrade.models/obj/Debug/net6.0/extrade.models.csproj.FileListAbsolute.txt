@@ -1,0 +1,14 @@
+D:\final model database\extrade.models\extrade.models\obj\Debug\net6.0\extrade.models.csproj.AssemblyReference.cache
+D:\final model database\extrade.models\extrade.models\obj\Debug\net6.0\extrade.models.GeneratedMSBuildEditorConfig.editorconfig
+D:\final model database\extrade.models\extrade.models\obj\Debug\net6.0\extrade.models.AssemblyInfoInputs.cache
+D:\final model database\extrade.models\extrade.models\obj\Debug\net6.0\extrade.models.AssemblyInfo.cs
+D:\final model database\extrade.models\extrade.models\obj\Debug\net6.0\extrade.models.csproj.CoreCompileInputs.cache
+D:\final model database\extrade.models\extrade.models\bin\Debug\net6.0\extrade.models.deps.json
+D:\final model database\extrade.models\extrade.models\bin\Debug\net6.0\extrade.models.runtimeconfig.json
+D:\final model database\extrade.models\extrade.models\bin\Debug\net6.0\extrade.models.dll
+D:\final model database\extrade.models\extrade.models\bin\Debug\net6.0\extrade.models.pdb
+D:\final model database\extrade.models\extrade.models\obj\Debug\net6.0\extrade.models.dll
+D:\final model database\extrade.models\extrade.models\obj\Debug\net6.0\refint\extrade.models.dll
+D:\final model database\extrade.models\extrade.models\obj\Debug\net6.0\extrade.models.pdb
+D:\final model database\extrade.models\extrade.models\obj\Debug\net6.0\extrade.models.genruntimeconfig.cache
+D:\final model database\extrade.models\extrade.models\obj\Debug\net6.0\ref\extrade.models.dll
