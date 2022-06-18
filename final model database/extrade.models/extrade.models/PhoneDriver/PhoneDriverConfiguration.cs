@@ -16,7 +16,7 @@ namespace extrade.models
             builder.HasKey(p=>p.ID);
             builder.Property(p => p.ID).IsRequired().ValueGeneratedOnAdd();
             builder.Property(p => p.Number).IsRequired();
-            builder.Property(p => p.Driverid).IsRequired();
+            builder.Property(p => p.DriverID).IsRequired();
 
         }
     }

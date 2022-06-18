@@ -9,11 +9,11 @@ namespace extrade.models
     public class Product
     {
         public int ID{ get; set; }
-        public string ProductnameEn{ get; set; }
-        public string productnameAr { get; set; }
+        public string NameEn{ get; set; }
+        public string NameAr { get; set; }
         public float Price { get; set; }
         public int Quantity { get; set; }
-        public string ProductDescription { get; set; }
+        public string Description { get; set; }
         public int CategeroyID { get; set; }
         public int VendorID{ get; set; }
         public bool IsDeleted { get; set; }
@@ -23,7 +23,7 @@ namespace extrade.models
         public DateTime ModifiedDate { get; set; }
 
         public List<MarketDetails> MarketDetails { get; set; }
-        public List<order_details> order_Details { get; set; }
+        public List<OrderDetails> OrderDetails { get; set; }
        public List<Rating> Rating { get; set; }
        public List<Favourite> Favourite { get; set; }
         public List<Cart> Cart { get; set; }

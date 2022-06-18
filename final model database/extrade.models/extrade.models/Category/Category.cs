@@ -9,8 +9,8 @@ namespace extrade.models
     public class Category
     {
         public int ID { get; set; }
-        public string CategoryNameAr { get; set; }
-        public string CategoryNameEn { get; set; }
+        public string NameAr { get; set; }
+        public string NameEn { get; set; }
         public string Image { get; set; }
         public DateTime ModifiedDate { get; set; }
         public List<Product> Product { get; set; } 

@@ -56,16 +56,6 @@ namespace extrade.models.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<string>("CategoryNameAr")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
-
-                    b.Property<string>("CategoryNameEn")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
-
                     b.Property<string>("Image")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -73,12 +63,22 @@ namespace extrade.models.Migrations
                     b.Property<DateTime>("ModifiedDate")
                         .HasColumnType("date default getdate()");
 
+                    b.Property<string>("NameAr")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<string>("NameEn")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
                     b.HasKey("ID");
 
                     b.ToTable("Category", (string)null);
                 });
 
-            modelBuilder.Entity("extrade.models.CientPhone", b =>
+            modelBuilder.Entity("extrade.models.ClientPhone", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -99,16 +99,16 @@ namespace extrade.models.Migrations
 
                     b.HasIndex("MarkterClientID");
 
-                    b.ToTable("CientPhone", (string)null);
+                    b.ToTable("ClientPhone", (string)null);
                 });
 
             modelBuilder.Entity("extrade.models.Driver", b =>
                 {
-                    b.Property<int>("DriverID")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DriverID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
                     b.Property<string>("City")
                         .IsRequired()
@@ -116,16 +116,6 @@ namespace extrade.models.Migrations
                         .HasColumnType("nvarchar(40)");
 
                     b.Property<string>("Country")
-                        .IsRequired()
-                        .HasMaxLength(40)
-                        .HasColumnType("nvarchar(40)");
-
-                    b.Property<string>("DrivernameAr")
-                        .IsRequired()
-                        .HasMaxLength(40)
-                        .HasColumnType("nvarchar(40)");
-
-                    b.Property<string>("DrivernameEn")
                         .IsRequired()
                         .HasMaxLength(40)
                         .HasColumnType("nvarchar(40)");
@@ -138,12 +128,22 @@ namespace extrade.models.Migrations
                     b.Property<DateTime>("ModifiedDate")
                         .HasColumnType("date default getdate()");
 
+                    b.Property<string>("NameAr")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.Property<string>("NameEn")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
                     b.Property<string>("Street")
                         .IsRequired()
                         .HasMaxLength(40)
                         .HasColumnType("nvarchar(40)");
 
-                    b.HasKey("DriverID");
+                    b.HasKey("ID");
 
                     b.ToTable("Driver", (string)null);
                 });
@@ -334,7 +334,7 @@ namespace extrade.models.Migrations
                     b.ToTable("Order", (string)null);
                 });
 
-            modelBuilder.Entity("extrade.models.order_details", b =>
+            modelBuilder.Entity("extrade.models.OrderDetails", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -360,7 +360,7 @@ namespace extrade.models.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("order_details", (string)null);
+                    b.ToTable("OrderDetails", (string)null);
                 });
 
             modelBuilder.Entity("extrade.models.Phone", b =>
@@ -392,7 +392,7 @@ namespace extrade.models.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<int>("Driverid")
+                    b.Property<int>("DriverID")
                         .HasColumnType("int");
 
                     b.Property<int>("Number")
@@ -400,7 +400,7 @@ namespace extrade.models.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("Driverid");
+                    b.HasIndex("DriverID");
 
                     b.ToTable("PhoneDriver", (string)null);
                 });
@@ -419,6 +419,11 @@ namespace extrade.models.Migrations
                     b.Property<int>("CategoryID")
                         .HasColumnType("int");
 
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(800)
+                        .HasColumnType("nvarchar(800)");
+
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
@@ -427,29 +432,24 @@ namespace extrade.models.Migrations
                     b.Property<DateTime>("ModifiedDate")
                         .HasColumnType("date default getdate()");
 
-                    b.Property<float>("Price")
-                        .HasColumnType("real");
-
-                    b.Property<string>("ProductDescription")
-                        .IsRequired()
-                        .HasMaxLength(800)
-                        .HasColumnType("nvarchar(800)");
-
-                    b.Property<string>("ProductnameEn")
+                    b.Property<string>("NameAr")
                         .IsRequired()
                         .HasMaxLength(40)
                         .HasColumnType("nvarchar(40)");
+
+                    b.Property<string>("NameEn")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.Property<float>("Price")
+                        .HasColumnType("real");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
                     b.Property<int>("VendorID")
                         .HasColumnType("int");
-
-                    b.Property<string>("productnameAr")
-                        .IsRequired()
-                        .HasMaxLength(40)
-                        .HasColumnType("nvarchar(40)");
 
                     b.HasKey("ID");
 
@@ -559,12 +559,12 @@ namespace extrade.models.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("VendorID"), 1L, 1);
 
-                    b.Property<string>("BradndNameAr")
+                    b.Property<string>("BrandNameAr")
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<string>("BradndNameEr")
+                    b.Property<string>("BrandNameEr")
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
@@ -586,7 +586,7 @@ namespace extrade.models.Migrations
                     b.ToTable("vendor", (string)null);
                 });
 
-            modelBuilder.Entity("extrade.models.VendorImg", b =>
+            modelBuilder.Entity("extrade.models.VendorImage", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -594,10 +594,7 @@ namespace extrade.models.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<int>("IDVendorImg")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ImgWork")
+                    b.Property<string>("Image")
                         .IsRequired()
                         .HasMaxLength(400)
                         .HasColumnType("nvarchar(400)");
@@ -609,7 +606,7 @@ namespace extrade.models.Migrations
 
                     b.HasIndex("VendorID");
 
-                    b.ToTable("VendorImg", (string)null);
+                    b.ToTable("VendorImage", (string)null);
                 });
 
             modelBuilder.Entity("extrade.models.Cart", b =>
@@ -631,10 +628,10 @@ namespace extrade.models.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("extrade.models.CientPhone", b =>
+            modelBuilder.Entity("extrade.models.ClientPhone", b =>
                 {
                     b.HasOne("extrade.models.MarkterClient", "MarkterClient")
-                        .WithMany("CientPhone")
+                        .WithMany("ClientPhone")
                         .HasForeignKey("MarkterClientID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -674,7 +671,7 @@ namespace extrade.models.Migrations
 
             modelBuilder.Entity("extrade.models.MarketDetails", b =>
                 {
-                    b.HasOne("extrade.models.Market", "market")
+                    b.HasOne("extrade.models.Market", "Market")
                         .WithMany("MarketDetails")
                         .HasForeignKey("MarketID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -686,9 +683,9 @@ namespace extrade.models.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Product");
+                    b.Navigation("Market");
 
-                    b.Navigation("market");
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("extrade.models.Markter", b =>
@@ -740,16 +737,16 @@ namespace extrade.models.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("extrade.models.order_details", b =>
+            modelBuilder.Entity("extrade.models.OrderDetails", b =>
                 {
                     b.HasOne("extrade.models.Order", "Order")
-                        .WithMany("order_Details")
+                        .WithMany("OrderDetails")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("extrade.models.Product", "Product")
-                        .WithMany("order_Details")
+                        .WithMany("OrderDetails")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -774,7 +771,7 @@ namespace extrade.models.Migrations
                 {
                     b.HasOne("extrade.models.Driver", "Driver")
                         .WithMany("PhoneDriver")
-                        .HasForeignKey("Driverid")
+                        .HasForeignKey("DriverID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -830,10 +827,10 @@ namespace extrade.models.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("extrade.models.VendorImg", b =>
+            modelBuilder.Entity("extrade.models.VendorImage", b =>
                 {
                     b.HasOne("extrade.models.Vendor", "Vendor")
-                        .WithMany("VendorImg")
+                        .WithMany("VendorImage")
                         .HasForeignKey("VendorID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -865,12 +862,12 @@ namespace extrade.models.Migrations
 
             modelBuilder.Entity("extrade.models.MarkterClient", b =>
                 {
-                    b.Navigation("CientPhone");
+                    b.Navigation("ClientPhone");
                 });
 
             modelBuilder.Entity("extrade.models.Order", b =>
                 {
-                    b.Navigation("order_Details");
+                    b.Navigation("OrderDetails");
                 });
 
             modelBuilder.Entity("extrade.models.Product", b =>
@@ -881,9 +878,9 @@ namespace extrade.models.Migrations
 
                     b.Navigation("MarketDetails");
 
-                    b.Navigation("Rating");
+                    b.Navigation("OrderDetails");
 
-                    b.Navigation("order_Details");
+                    b.Navigation("Rating");
                 });
 
             modelBuilder.Entity("extrade.models.User", b =>
@@ -912,7 +909,7 @@ namespace extrade.models.Migrations
                 {
                     b.Navigation("Product");
 
-                    b.Navigation("VendorImg");
+                    b.Navigation("VendorImage");
                 });
 #pragma warning restore 612, 618
         }

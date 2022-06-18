@@ -18,10 +18,10 @@ namespace extrade.models
                  HasForeignKey(p => p.UserID).
                  OnDelete(DeleteBehavior.Cascade);
             // vendor => vendor_image
-            builder.Entity<VendorImg>()
+            builder.Entity<VendorImage>()
                 .HasOne(p => p.Vendor).
-                WithMany(p => p.VendorImg).
-                HasForeignKey(p => p.IDVendorImg).
+                WithMany(p => p.VendorImage).
+                HasForeignKey(p => p.VendorID).
                 OnDelete(DeleteBehavior.Cascade);
             //// vendor => users
             //builder.Entity<vendor>()
@@ -82,7 +82,7 @@ namespace extrade.models
                  OnDelete(DeleteBehavior.Cascade);
             //marketDetails => market
             builder.Entity<MarketDetails>()
-                 .HasOne(p => p.market).
+                 .HasOne(p => p.Market).
                  WithMany(p => p.MarketDetails).
                  HasForeignKey(p => p.MarketID).
                  OnDelete(DeleteBehavior.Cascade);
@@ -94,16 +94,16 @@ namespace extrade.models
                  HasForeignKey(p => p.MarketID).
                  OnDelete(DeleteBehavior.Cascade);
              //clientphone => marketclient
-            builder.Entity<CientPhone>()
+            builder.Entity<ClientPhone>()
                  .HasOne(p => p.MarkterClient).
-                 WithMany(p => p.CientPhone).
+                 WithMany(p => p.ClientPhone).
                  HasForeignKey(p => p.ClientID).
                  OnDelete(DeleteBehavior.Cascade);
              //phonedriver => driver
             builder.Entity<PhoneDriver>()
                  .HasOne(p => p.Driver).
                  WithMany(p => p.PhoneDriver).
-                 HasForeignKey(p => p.Driverid).
+                 HasForeignKey(p => p.DriverID).
                  OnDelete(DeleteBehavior.Cascade);
             //oreder => user,driver
             builder.Entity<Order>()
@@ -118,21 +118,24 @@ namespace extrade.models
                 OnDelete(DeleteBehavior.Cascade);
 
             //orderdetails =>order,product
-            builder.Entity<order_details>().HasOne(p => p.Order).
-                WithMany(p => p.order_Details).
+            builder.Entity<OrderDetails>()
+                .HasOne(p => p.Order).
+                WithMany(p => p.OrderDetails).
                 HasForeignKey(p => p.OrderId).
                 OnDelete(DeleteBehavior.Cascade);
 
-            builder.Entity<order_details>().HasOne(p => p.Product).
-               WithMany(p => p.order_Details).
-               HasForeignKey(p => p.ProductId);
-             
+            builder.Entity<OrderDetails>().HasOne(p => p.Product).
+               WithMany(p => p.OrderDetails).
+               HasForeignKey(p => p.ProductId).
+               OnDelete(DeleteBehavior.NoAction);
+
 
             //rating => product , user
             builder.Entity<Rating>().HasOne(p => p.Product).
                 WithMany(p => p.Rating).
-                HasForeignKey(p => p.ProductID);
-               
+                HasForeignKey(p => p.ProductID).
+                OnDelete(DeleteBehavior.NoAction);
+
 
             builder.Entity<Rating>().HasOne(p => p.User).
                WithMany(p => p.Rating).
@@ -143,7 +146,8 @@ namespace extrade.models
             builder.Entity<Favourite>().
                 HasOne(p => p.Product).
                 WithMany(p => p.Favourite).
-                HasForeignKey(p => p.ProductID);
+                HasForeignKey(p => p.ProductID).
+                OnDelete(DeleteBehavior.NoAction);
 
             builder.Entity<Favourite>().
                HasOne(p => p.User).
@@ -159,7 +163,9 @@ namespace extrade.models
 
             builder.Entity<Cart>().
              HasOne(p => p.Product).
-             WithMany(p => p.Cart).HasForeignKey(p=>p.ProductID).OnDelete(DeleteBehavior.NoAction);
+             WithMany(p => p.Cart).
+             HasForeignKey(p=>p.ProductID).
+             OnDelete(DeleteBehavior.NoAction);
              
 
 

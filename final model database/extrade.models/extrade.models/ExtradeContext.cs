@@ -18,13 +18,13 @@ namespace extrade.models
         public DbSet<Market> Markets { get; set; }
         public DbSet<MarketDetails> MarketDetails { get; set; }
         public DbSet<Markter> Markters { get; set; }
-        public DbSet<CientPhone> CientPhones { get; set; }
+        public DbSet<ClientPhone> ClientPhones { get; set; }
         public DbSet<Vendor> Vendors { get; set; }
-        public DbSet<VendorImg> VendorImgs { get; set; }
+        public DbSet<VendorImage> VendorImgs { get; set; }
         public DbSet<Rating> Ratings { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<order_details> order_Details { get; set; }
+        public DbSet<OrderDetails> OrderDetails { get; set; }
         public DbSet<Cart> Carts { get; set; }
         public DbSet<Favourite> Favourites { get; set; }
         public DbSet<MarkterClient> MarkterClients { get; set; }
@@ -33,10 +33,10 @@ namespace extrade.models
        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            new vendorimgConfiguration().Configure(modelBuilder.Entity<VendorImg>());
+            new VendorImageConfiguration().Configure(modelBuilder.Entity<VendorImage>());
             new CartConfiguration().Configure(modelBuilder.Entity<Cart>());
             new categoryConfiguration().Configure(modelBuilder.Entity<Category>());
-            new CientPhoneconfiguration().Configure(modelBuilder.Entity<CientPhone>());
+            new ClientPhoneconfiguration().Configure(modelBuilder.Entity<ClientPhone>());
             new driverConfiuration().Configure(modelBuilder.Entity<Driver>());
             new favouriteConfiguratin().Configure(modelBuilder.Entity<Favourite>());
             new MarketConfiguration().Configure(modelBuilder.Entity<Market>());
@@ -44,7 +44,7 @@ namespace extrade.models
             new MarkterConfiguration().Configure(modelBuilder.Entity<Markter>());
             new MarkterClientConficguration().Configure(modelBuilder.Entity<MarkterClient>());
             new OrderConfiguration().Configure(modelBuilder.Entity<Order>());
-            new orderdetailsConfiguration().Configure(modelBuilder.Entity<order_details>());
+            new orderdetailsConfiguration().Configure(modelBuilder.Entity<OrderDetails>());
             new PhoneConfiguration().Configure(modelBuilder.Entity<Phone>());
             new productConfiguration().Configure(modelBuilder.Entity<Product>());
             new ratingConfiguration().Configure(modelBuilder.Entity<Rating>());

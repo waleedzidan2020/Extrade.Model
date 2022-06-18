@@ -15,11 +15,11 @@ namespace extrade.models
             builder.ToTable("Product");
             builder.HasKey(p=>p.ID);
             builder.Property(p => p.ID).IsRequired().ValueGeneratedOnAdd();
-            builder.Property(p => p.productnameAr).HasMaxLength(40).IsRequired();
-            builder.Property(p => p.ProductnameEn).HasMaxLength(40).IsRequired();
+            builder.Property(p => p.NameAr).HasMaxLength(40).IsRequired();
+            builder.Property(p => p.NameEn).HasMaxLength(40).IsRequired();
             builder.Property(p => p.Price).IsRequired();
             builder.Property(p => p.Quantity).IsRequired();
-            builder.Property(p => p.ProductDescription).HasMaxLength(800).IsRequired();
+            builder.Property(p => p.Description).HasMaxLength(800).IsRequired();
             builder.Property(p => p.CategeroyID).IsRequired();
             builder.Property(p => p.VendorID).IsRequired();
             builder.Property(p => p.IsDeleted).HasDefaultValue(false);

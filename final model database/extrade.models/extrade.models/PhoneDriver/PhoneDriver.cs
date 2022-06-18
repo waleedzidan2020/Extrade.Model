@@ -10,7 +10,7 @@ namespace extrade.models
     {
      public int ID { get; set; }
         public int Number { get; set; }
-        public int Driverid { get; set; }
+        public int DriverID { get; set; }
 
         public Driver Driver { get; set; }
 

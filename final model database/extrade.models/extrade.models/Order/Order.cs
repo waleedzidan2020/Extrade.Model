@@ -17,7 +17,7 @@ namespace extrade.models
         public DateTime ModifiedDate { get; set; } 
         public User User { get; set; }
         public Driver Driver { get; set; }
-        public List<order_details> order_Details { get; set;  }
+        public List<OrderDetails> OrderDetails { get; set;  }
 
         
 

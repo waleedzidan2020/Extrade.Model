@@ -15,8 +15,8 @@ namespace extrade.models
             builder.ToTable("Category");
             builder.HasKey(p=>p.ID);
             builder.Property(p => p.ID).IsRequired().ValueGeneratedOnAdd();
-            builder.Property(p => p.CategoryNameAr).IsRequired().HasMaxLength(30);
-            builder.Property(p => p.CategoryNameEn).IsRequired().HasMaxLength(30);
+            builder.Property(p => p.NameAr).IsRequired().HasMaxLength(30);
+            builder.Property(p => p.NameEn).IsRequired().HasMaxLength(30);
             builder.Property(p => p.Image).IsRequired();
             builder.Property(p => p.ModifiedDate).IsRequired().HasColumnType("date default getdate()");
 

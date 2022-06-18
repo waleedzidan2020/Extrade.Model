@@ -9,9 +9,9 @@ namespace extrade.models
 {
     public class Driver
     {
-        public int DriverID { get; set; }
-        public string DrivernameEn { get; set; }
-        public string DrivernameAr { get; set; }
+        public int ID { get; set; }
+        public string NameEn { get; set; }
+        public string NameAr { get; set; }
         public string Country { get; set; }
         public string City { get; set; }
         public string Street { get; set; }

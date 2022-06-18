@@ -12,7 +12,7 @@ namespace extrade.models
         public int UserID { get; set; }
         public int CodeMarketer { get; set; }
         public User User { get; set; }
-      public List< CientPhone> CientPhone { get; set; }
+      public List< ClientPhone> ClientPhone { get; set; }
 
     }
 }

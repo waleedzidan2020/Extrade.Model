@@ -13,10 +13,10 @@ namespace extrade.models
         public void Configure(EntityTypeBuilder<Driver> builder)
         {
             builder.ToTable("Driver");
-            builder.HasKey(p => p.DriverID);
-            builder.Property(p => p.DriverID).IsRequired().ValueGeneratedOnAdd();
-            builder.Property(p => p.DrivernameAr).HasMaxLength(40).IsRequired();
-            builder.Property(p => p.DrivernameEn).HasMaxLength(40).IsRequired();
+            builder.HasKey(p => p.ID);
+            builder.Property(p => p.ID).IsRequired().ValueGeneratedOnAdd();
+            builder.Property(p => p.NameAr).HasMaxLength(40).IsRequired();
+            builder.Property(p => p.NameEn).HasMaxLength(40).IsRequired();
             builder.Property(p => p.Country).HasMaxLength(40).IsRequired();
             builder.Property(p => p.City).HasMaxLength(40).IsRequired();
             builder.Property(p => p.Street).HasMaxLength(40).IsRequired();

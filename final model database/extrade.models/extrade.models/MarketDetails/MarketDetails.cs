@@ -11,7 +11,7 @@ namespace extrade.models
      public int ProductID { get; set; }
         public int MarketID { get; set; }
         public DateTime? ModifiedDate { get; set; }
-        public Market market { get; set; }
+        public Market Market { get; set; }
 
         public Product Product { get; set; }
 
